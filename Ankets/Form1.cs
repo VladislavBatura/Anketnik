@@ -21,6 +21,7 @@ namespace Ankets
 
         Form1 fr;
         Button[] applicationButtons;
+        List<Button> sort;
         string[] dataFromBD = new string[13];
         string[] rowsFromTable;
         List<string> info = new List<string>();
@@ -69,7 +70,7 @@ namespace Ankets
             int posX, posY; //позиции Х и У
             posX = 10; //Начальная позиция
             posY = 50;
-            List<Button> sort = new List<Button>();
+            sort = new List<Button>();
             
             for(int i = 0; i < 2; i++)
             {
@@ -181,6 +182,9 @@ namespace Ankets
             {
                 i.Hide();
             }
+            sort[0].Hide();
+            sort[1].Hide();
+            
 
             ButtonApproved.Show();
             ButtonMeeting.Show();
@@ -237,11 +241,9 @@ namespace Ankets
             foreach (Button i in applicationButtons)
             {
                 i.Show();
-                //if (i.Tag.ToString() == id.ToString())
-                //{
-                //    i.Dispose();
-                //}
             }
+            sort[0].Show();
+            sort[1].Show();
 
             ApplicationTextBox.Clear();
             ApplicationTextBox.Hide();
